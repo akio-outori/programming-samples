@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<link rel="stylesheet" type="text/css" href="../css/main.css">
+		<title>Udacity NanoDegree - Intro to Programming</title>
+	</head>
+	
+	<body>
+
+		<article>
+			<h2>Chapter 3: Adding Style with CSS</h2>
+			
+			<div class="content">
+				<h3>CSS</h3>
+					<p>
+						<a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets">CSS</a> or <em>Cascading Style Sheets</em> is a stylesheet 
+						language used to describe the look and feel of websites to your browser.  While CSS can be embedded in HTML, its preferred 
+						that .css files be designed and linked to the webpages that will use them.  Doing so unlocks much greater potential for 
+						consistency and automation than embedding alone.  
+					</p>
+				<h3>CSS Inheritance</h3>
+					<p>
+						CSS works on an inheritance model where each child element inherits the properties of the element above it.  This means that style 
+						applied to headers or body elements could be overridden by styles applied to specific classes within those elements (.e.g - 
+						style applied to &#60;div class="special_class"&#62; would take precedence over style applied to all &#60;div&#62; elements).
+					</p>
+				<h3>CSS Consistency</h3>
+					<p>
+						Another wonderful aspect of CSS is its ability to enforce consistent theming across your website or project with only a few
+						declarations.  Stand-alone stylesheet files can be referenced by more than one HTML document, meaning that any styles used
+						in a project can be applied to the entire project (or specific sections / pages) as desired.  
+					</p>
+					<p>
+						This focus on consistency combines several highly desirable features for any programming language centered around avoiding
+						repetition.  Repetition is bad for programmers because it leads to a higher risk of human error (greater entropy), less consistent 
+						code (re-creating the same "tool" multiple times), and more time spent debugging.  The more streamlined and understandable the code,
+						the easier it is to update and maintain.  This is especially true where multiple developers may be working on the same 
+						projects.
+					</p>
+				<h3>CSS and the Box</h3>
+					<p>
+						CSS has significant implications for the box model of HTML as well.  Using stylesheets, you can modify several aspects of the standard
+						box, including:
+					</p>
+					<ul class="inline_list">
+						<li>margin (space between boxes</li>
+						<li>border (border surrounding the padding and content)</li>
+						<li>padding (space between the content and the border)</li>
+						<li>content (the actual HTML content that appears on the website)</li>
+					</ul>
+					<p>
+						CSS can also make the box model more intuitive to use, though best practices must be followed to ensure compatability with
+						older browsers.  You can read more about this <a href="https://css-tricks.com/box-sizing/">here</a>
+					</p>
+				<h3>Verifying CSS</h3>
+					<p>
+						Not all browsers are created equal.  Unfortuantely, each browser will display your code in a slightly different way.  Due to this, 
+						all code should be checked by an HTML or CSS verification tool to ensure that it complies with standards that popular broswers
+						will be able to understand and display. <a href="http://jigsaw.w3.org/css-validator/#validate_by_input">Here</a> is a link
+						to the CSS verification tool recommended in this course.
+					</p>
+			</div>
+		</article>
+
+		<footer>
+			<p class="left"><a href="chapter-2.html">prev</a></p>
+			<p class="right"><a href="../index.html">next</a></p>				
+		</footer>
+	</body>
+</html>

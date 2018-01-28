@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>My Movie Website</title>
+
+    <!-- Bootstrap 3 -->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <style type="text/css" media="screen">
+        body {
+            padding-top: 80px;
+        }
+        #trailer .modal-dialog {
+            margin-top: 200px;
+            width: 640px;
+            height: 480px;
+        }
+        .hanging-close {
+            position: absolute;
+            top: -12px;
+            right: -12px;
+            z-index: 9001;
+        }
+        #trailer-video {
+            width: 100%;
+            height: 100%;
+        }
+        .movie-tile {
+            margin-bottom: 5px;
+            padding-top: 5px;
+        }
+        .movie-tile:hover {
+            background-color: #EEE;
+            cursor: pointer;
+        }
+        .scale-media {
+            padding-bottom: 56.25%;
+            position: relative;
+        }
+        .scale-media iframe {
+            border: none;
+            height: 100%;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 0;
+            background-color: white;
+	}	
+	.popupBox {
+		visibility:hidden;
+		opacity:0;        
+		transition:visibility 0s linear 0.3s,opacity 0.3s linear;
+		transition: all 0.4s ease;
+		transition-delay:  1s;
+	}
+	.popupHoverElement:hover > .popupBox {
+		visibility:visible;
+		opacity:1;
+		transition: all 0.3s ease;
+		transition-delay:  0s;        
+	}       
+	#button {
+		background:#FFF;
+		position:relative;
+		width:100px;
+		height:30px;
+		line-height:27px;
+		display:block;
+		border:1px solid #dadada;
+		margin:15px 0 0 10px;
+		text-align:center;
+	}
+	#two {
+		background: none repeat scroll 0 0 #EEEEEE;
+		border: 1px solid #DADADA;
+		color: #333333;
+		overflow:hidden;
+		left: 0;
+		line-height: 20px;
+		position: absolute;
+		top: 30px;
+	}
+
+    </style>
+    <script type="text/javascript" charset="utf-8">
+        // Pause the video when the modal is closed
+        $(document).on('click', '.hanging-close, .modal-backdrop, .modal', function (event) {
+            // Remove the src so the player itself gets removed, as this is the only
+            // reliable way to ensure the video stops playing in IE
+            $("#trailer-video-container").empty();
+        });
+        // Start playing the video whenever the trailer modal is opened
+        $(document).on('click', '.movie-tile', function (event) {
+            var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
+            var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
+            $("#trailer-video-container").empty().append($("<iframe></iframe>", {
+              'id': 'trailer-video',
+              'type': 'text-html',
+              'src': sourceUrl,
+              'frameborder': 0
+            }));
+        });
+        // Animate in the movies when the page loads
+        $(document).ready(function () {
+          $('.movie-tile').hide().first().show("fast", function showNext() {
+            $(this).next("div").show("fast", showNext);
+          });
+        });
+    </script>
+</head>
+
+  <body>
+    <!-- Trailer Video Modal -->
+    <div class="modal" id="trailer">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <a href="#" class="hanging-close" data-dismiss="modal" aria-hidden="true">
+            <img src="https://lh5.ggpht.com/v4-628SilF0HtHuHdu5EzxD7WRqOrrTIDi_MhEG6_qkNtUK5Wg7KPkofp_VJoF7RS2LhxwEFCO1ICHZlc-o_=s0#w=24&h=24"/>
+          </a>
+          <div class="scale-media" id="trailer-video-container">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Page Content -->
+    <div class="container">
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="movies_index.html">Favorite Movies</a>
+          </div>
+          <div>
+	    <a class="navbar-brand" href="shows_index.html">Favorite Series</a>
+	  </div>
+	</div>
+      </div>
+    </div>
+    <div class="container">
+      
+<div class="col-md-6 col-lg-4 movie-tile text-center popupHoverElement" data-trailer-youtube-id="KPcZHjKJBnE" data-toggle="modal" data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BMTA4MDQxNTk2NDheQTJeQWpwZ15BbWU3MDE2NjIyODk@._V1__SX1182_SY1220_.jpg" width="220" height="342">
+    <h4>Blade Runner (117 Min.)</h4>
+	<div class=popupBox> <h6>A blade runner must pursue and try to terminate four replicants who stole 
+					 a ship in space and have returned to Earth to find their creator.</h6> </div>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center popupHoverElement" data-trailer-youtube-id="zaEWLuVJee0" data-toggle="modal" data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BMTM2MzQ1NDA3OV5BMl5BanBnXkFtZTcwNjM2OTczMQ@@._V1__SX1182_SY1220_.jpg" width="220" height="342">
+    <h4>Transformers the Movie (90 Min.)</h4>
+	<div class=popupBox> <h6>The Autobots must stop a colossal planet consuming robot who goes after the Autobot Matrix of Leadership. 
+					 At the same time, they must defend themselves against an all-out attack from the Decepticons.</h6> </div>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center popupHoverElement" data-trailer-youtube-id="hlSASsGs73w" data-toggle="modal" data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BMTgwNTI3OTczOV5BMl5BanBnXkFtZTcwMTM3MTUyMw@@._V1__SX1182_SY1220_.jpg" width="220" height="342">
+    <h4>The Secret in Their Eyes (129 Min.)</h4>
+	<div class=popupBox> <h6>A retired legal counselor writes a novel hoping to find closure for one of his past unresolved homicide
+					 cases and for his unreciprocated love with his superior - both of which still haunt him decades later.</h6> </div>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center popupHoverElement" data-trailer-youtube-id="ej3ioOneTy8" data-toggle="modal" data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BMTc2MTQ3MDA1Nl5BMl5BanBnXkFtZTgwODA3OTI4NjE@._V1__SX1182_SY1220_.jpg" width="220" height="342">
+    <h4>The Martian (144 Min.)</h4>
+	<div class=popupBox> <h6>During a manned mission to Mars, Astronaut Mark Watney is presumed dead after a fierce storm and left 
+					behind by his crew. But Watney has survived and finds himself stranded and alone on the hostile planet. 
+					With only meager supplies, he must draw upon his ingenuity, wit and spirit to subsist and find a way to 
+					signal to Earth that he is alive.</h6> </div>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center popupHoverElement" data-trailer-youtube-id="qCcf9FBsNVo" data-toggle="modal" data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BMTkyODE4MDIxNV5BMl5BanBnXkFtZTcwNzYxNDI4OA@@._V1__SX1182_SY1220_.jpg" width="220" height="342">
+    <h4>Star Trek VI (113 Min.)</h4>
+	<div class=popupBox> <h6>On the eve of retirement, Kirk and McCoy are charged with assassinating the Klingon High Chancellor and imprisoned.
+					The Enterprise crew must help them escape to thwart a conspiracy aimed at sabotaging the last best hope for peace.</h6> </div>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center popupHoverElement" data-trailer-youtube-id="G-eI5oLlIeY" data-toggle="modal" data-target="#trailer">
+    <img src="http://ia.media-imdb.com/images/M/MV5BODkyNDQzMzUzOF5BMl5BanBnXkFtZTcwODYyMDEyOA@@._V1__SX1276_SY1220_.jpg" width="220" height="342">
+    <h4>Dredd (95 Min.)</h4>
+	<div class=popupBox> <h6>In a violent, futuristic city where the police have the authority to act as judge, jury and executioner, a cop
+					teams with a trainee to take down a gang that deals the reality-altering drug, SLO-MO.</h6> </div>
+</div>
+
+    </div>
+  </body>
+</html>

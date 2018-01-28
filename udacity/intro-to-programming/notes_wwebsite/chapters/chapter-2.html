@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<link rel="stylesheet" type="text/css" href="../css/main.css">
+		<title>Udacity NanoDegree - Intro to Programming</title>
+	</head>
+	
+	<body>
+
+		<article>
+			<h2>Chapter 2: Creating a Structured Document with HTML</h2>
+			
+			<div class="content">
+				<h3>Developer Tools</h3>
+					<p>
+						All browsers include a set of developer tools that can be used to examine the structure of websites you view and to test your 
+						own constructions.  While each browser displays these tools differently, all major browsers include the capacity to examine HTML and 
+						<a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets">CSS</a> (Cascading Style Sheets) elements.  
+						<a href="http://support.kissmetrics.com/getting-started/testing-km/using-dev-tools.html">Here</a> is a link that shows the basics of 
+						accessing these tools on Chrome and Firefox.
+					</p>
+				<h3>Tree-like Structure of HTML</h3>
+					<p>
+						All HTML documents are structured based on the <a href="https://en.wikipedia.org/wiki/Document_Object_Model">DOM</a>
+						(<em>Document Object Model</em>) Model. This model outlines a tree-like document structure that is easy to parse using development tools or 
+						apply styles to using CSS. 
+					</p>
+					<p>
+						With HTML, the structure is composed of elements like &#60;<em>div</em>&#62;, &#60;<em>h1</em>&#62;, and 
+						even inline elements like &#60;<em>span</em>&#62; which create containers ("boxes") around content.  These "boxes" are then grouped 
+						into parent/child relationships where elements exist within the context of the elements directly above them, and can inherit properties and styles 
+						from those higher level elements.  This combination of a heirarchal document structure with style inheritance allows consistent styling to be 
+						applied to like elements while also providing the ability to easily navigate the entire document tree and review individual elements. 
+					</p>
+				<h3>The Box</h3>
+					<p>
+						<em>Everything in an HTML document is a box</em>.  This is a core design principle that helps to segment designs.
+						By splitting everything on the page into boxes and deciding what content should go in each box, the developer can create a structured document
+						that is easy to re-arrange and re-design as needed.
+					</p>
+				<h3>Div Tags and Classes</h3>
+					<p>
+						One very important and very powerful feature of HTML and the box model is the ability to assign classes to elements such as 
+						&#60;<em>div</em>&#62;.  While &#60;<em>div</em>&#62; elements are a core feature of the box model mentioned earlier,
+						classes allow for style (CSS) to be applied to specific elements based on named attributes specified by the programmer.  
+						This feature is very powerful for avoiding repetition and ensuring consistency in web projects.  The feature is described in greater detail 
+						<a href="http://www.w3schools.com/html/html_classes.asp">here.</a>
+					</p>
+				<h3>Verifying HTML</h3>
+					<p>
+						Not all browsers are created equal.  Unfortunately, each browser will display your code in a slightly different way.  Due to this, 
+						all code should be checked by an HTML verification tool to ensure that it complies with standards that popular broswers
+						will be able to understand and display.  <a href="http://validator.w3.org/#validate_by_input">Here</a> is a link to the HTML verification 
+						tool recommended in this course. 
+					</p>
+			</div>
+		</article>
+
+		<footer>
+			<p class="left"><a href="chapter-1.html">prev</a></p>
+			<p class="right"><a href="chapter-3.html">next</a></p>				
+		</footer>
+	</body>
+</html>

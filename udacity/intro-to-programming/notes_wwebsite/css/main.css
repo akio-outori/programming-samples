@@ -1,0 +1,74 @@
+/* Border box styling so that boxes behave more predictably.  
+Specific syntax taken from - https://css-tricks.com/box-sizing/ */
+
+*{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html { 
+	box-sizing: border-box; 
+} 
+	*, *:before, *:after { 
+		box-sizing: inherit; 
+}
+
+/* Background image should cover available space.  Slightly different than size to fit */
+body {
+	background-image: url("../images/flower.jpg");	
+	background-size: cover;
+}
+
+/* All headers and links should be bold and have white text.  More specific header formatting below */
+h1, h2, h3, a {
+	font-weight: bold;
+	color: white;
+}
+
+/* h1 used for the site title, align this at center */
+h1 {
+	text-align: center;
+}
+
+/* h2 used for chapter headings.  Align left */
+h2 {
+	text-align: left;
+}
+
+/* h3 used for paragraph headings.  underline to set these apart from the content below them */
+h3 {
+	text-decoration: underline;
+}
+
+/* Add padding around paragraphs and lists for aesthetics */
+p, ul {
+	border-radius: 5px;
+	padding: 5px 5px 5px 10px;
+	margin: 10px;
+}
+
+/* Give inline lists a bit more left side padding so they look like part of the paragraph. */
+ul.inline_list {
+	padding: 5px 5px 5px 50px;
+}
+
+/* left footer div.  Float left to align left */
+footer p.left {
+	float: left;
+}
+
+/* right footer div.  Float right to align right */
+footer p.right {
+	float: right;
+}
+
+/* body divs.  Add some padding and make the background transluscent to bring out the background image */
+.content {
+	background: rgba(126, 182, 255, 0.6) ;
+	border-radius: 1px;
+	padding: 5px;
+	margin: 5px;
+}
+		

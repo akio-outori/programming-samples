@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form>
+	<h2>Pick a Number</h2>
+	<input type="text" name="number">
+	<input type="submit">
+	<br>
+	<br>
+	
+	{% if number %}
+		{% for digit in range(1,number+1) %}
+			{% if digit % 3 == 0 and digit % 5 == 0 %}
+				<li>FizzBuzz</li>
+			{% elif digit % 3 == 0 %}
+				<li>Fizz</li>
+			{% elif digit % 5 == 0 %}
+				<li>Buzz</li>
+			{% else %}
+				<li>{{digit}}</li>
+			{% endif %}
+		{% endfor %}
+	{% endif %}	
+</form>
+
+{% endblock %}

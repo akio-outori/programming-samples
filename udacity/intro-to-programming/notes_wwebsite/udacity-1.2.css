@@ -1,0 +1,19 @@
+
+/* Done because of - https://css-tricks.com/box-sizing/ */
+html {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 80%;
+	height: 80%;
+}
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+  }
+.div {
+	box-sizing: border-box;
+	width: 80%;
+	height: 80%;
+}
