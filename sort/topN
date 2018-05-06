@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+function usage() {
+  echo "Usage:"
+  echo "  topN <file> X"
+  echo "  Where X is the number of entries in the file to return"
+}
+
+FILE="$1"
+NUM="$2"
+CORES="$(grep -c ^processor /proc/cpuinfo)"
+
+if ! [ -f "$FILE" ]; then
+  echo "ERROR - $FILE is not a file!"
+  echo ""
+  usage
+  exit 1
+elif [ -z "$NUM" ]; then
+  echo "ERROR - you must specify the number of entries to return!"
+  echo ""
+  usage
+  exit 1
+fi
+
+sort -n -r -S 80% --parallel="$CORES" "$FILE" | head -n "$NUM"
